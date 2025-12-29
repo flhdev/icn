@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tentang Kami - Ijen Cendikia Nusantara</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#134257",
+              secondary: "#D6E6F7",
+              "background-light": "#f6f7f8",
+              "background-dark": "#131b1f",
+            },
+            fontFamily: {
+              display: ["Public Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            animation: {
+              "infinite-scroll": "infinite-scroll 25s linear infinite",
+            },
+            keyframes: {
+              "infinite-scroll": {
+                from: { transform: "translateX(0)" },
+                to: { transform: "translateX(-100%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#131516] dark:text-white font-display overflow-x-hidden flex flex-col min-h-screen"
+  >
+    <header
+      class="fixed top-0 left-0 z-50 w-full border-b bg-white/95 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/95"
+    >
+      <div
+        class="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="flex size-8 items-center justify-center rounded-lg bg-primary text-white"
+          >
+            <span class="material-symbols-outlined text-[20px]">school</span>
+          </div>
+          <h2
+            class="font-display text-xl font-bold tracking-tight text-primary dark:text-white"
+          >
+            ICN
+          </h2>
+        </div>
+        <nav class="hidden md:flex flex-1 items-center justify-center gap-8">
+          <a
+            class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+            href="#"
+            >Beranda</a
+          >
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+            >
+              Tentang
+              <span class="material-symbols-outlined text-[16px]"
+                >expand_more</span
+              >
+            </button>
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full hidden w-48 pt-2 group-hover:block hover:block"
+            >
+              <div
+                class="rounded-lg border border-gray-100 bg-white p-2 shadow-lg dark:border-gray-700 dark:bg-background-dark"
+              >
+                <a
+                  class="block rounded px-4 py-2 text-sm text-gray-700 hover:bg-secondary/30 dark:text-gray-300 dark:hover:bg-primary/30"
+                  href="#"
+                  >Organisasi Kami</a
+                >
+                <a
+                  class="block rounded px-4 py-2 text-sm text-gray-700 hover:bg-secondary/30 dark:text-gray-300 dark:hover:bg-primary/30"
+                  href="#"
+                  >Tim Kami</a
+                >
+              </div>
+            </div>
+          </div>
+          <a
+            class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+            href="#"
+            >Penelitian</a
+          >
+          <a
+            class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+            href="#"
+            >Program</a
+          >
+          <a
+            class="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+            href="#"
+            >Blog</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="hidden rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-primary/90 hover:shadow-md md:block"
+          >
+            Bergabung
+          </button>
+          <button
+            id="mobile-menu-btn"
+            class="block md:hidden text-gray-700 dark:text-white"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden border-t border-gray-100 bg-white dark:border-gray-800 dark:bg-background-dark"
+    >
+      <nav class="flex flex-col gap-2 px-4 py-6">
+        <ul class="flex flex-col gap-2">
+          <!-- ITEM -->
+          <li>
+            <a
+              class="block py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+              href="#"
+            >
+              Beranda
+            </a>
+          </li>
+
+          <!-- DROPDOWN -->
+          <li>
+            <button
+              class="flex w-full items-center justify-between py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+              data-dropdown-btn
+            >
+              Tentang
+              <span class="material-symbols-outlined text-[18px]">
+                expand_more
+              </span>
+            </button>
+
+            <ul class="hidden flex-col gap-1 pl-4" data-dropdown-menu>
+              <li>
+                <a
+                  class="block py-1 text-sm text-gray-600 dark:text-gray-400"
+                  href="#"
+                >
+                  Organisasi Kami
+                </a>
+              </li>
+              <li>
+                <a
+                  class="block py-1 text-sm text-gray-600 dark:text-gray-400"
+                  href="#"
+                >
+                  Tim Kami
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              class="block py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+              href="#"
+            >
+              Penelitian
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="block py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+              href="#"
+            >
+              Program
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="block py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+              href="#"
+            >
+              Blog
+            </a>
+          </li>
+        </ul>
+
+        <button
+          class="mt-4 rounded-lg bg-primary py-3 text-sm font-bold text-white"
+        >
+          Bergabung
+        </button>
+      </nav>
+    </div>
+    <main class="flex-1 pt-16">
+      <section class="bg-white dark:bg-background-dark py-12 md:py-16">
+        <div class="max-w-[960px] mx-auto px-4 md:px-10 lg:px-0">
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-2">
+              <span>Beranda</span>
+              <span class="material-symbols-outlined text-xs"
+                >chevron_right</span
+              >
+              <span class="text-primary font-medium">Tentang Kami</span>
+            </div>
+            <h1
+              class="text-primary dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
+            >
+              Tentang Organisasi Kami
+            </h1>
+            <p
+              class="text-[#6e787c] dark:text-gray-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl"
+            >
+              Mengenal lebih dalam siapa kami, sejarah perjalanan, dan dedikasi
+              kami untuk membangun Ijen Cendikia Nusantara.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="bg-background-light dark:bg-[#1e2326] py-16">
+        <div class="max-w-[960px] mx-auto px-4 md:px-10 lg:px-0">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="flex flex-col gap-6">
+              <div class="w-12 h-1 bg-primary rounded-full"></div>
+              <h2
+                class="text-[#131516] dark:text-white text-3xl font-bold leading-tight"
+              >
+                Kenal Lebih Dekat
+              </h2>
+              <div
+                class="flex flex-col gap-4 text-[#6e787c] dark:text-gray-300 leading-relaxed"
+              >
+                <p>
+                  Ijen Cendikia Nusantara (ICN) adalah organisasi nirlaba yang
+                  lahir dari semangat kepedulian terhadap pendidikan dan
+                  pengembangan sosial di kawasan sekitar Gunung Ijen. Berdiri
+                  sejak tahun 2018, kami telah bertransformasi menjadi wadah
+                  kolaborasi bagi pemuda daerah.
+                </p>
+                <p>
+                  Kami berkomitmen untuk memberdayakan potensi lokal melalui
+                  berbagai program edukatif, pelatihan keterampilan, dan aksi
+                  sosial yang berkelanjutan. Kami percaya bahwa perubahan besar
+                  dimulai dari langkah kecil yang dilakukan bersama-sama dengan
+                  integritas dan semangat gotong royong.
+                </p>
+              </div>
+              <div class="pt-2">
+                <button
+                  class="flex items-center gap-2 text-primary font-bold hover:text-primary-dark transition-colors"
+                >
+                  <span>Lihat Sejarah Kami</span>
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+            <div
+              class="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl group"
+            >
+              <div
+                class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors z-10"
+              ></div>
+              <div
+                class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="Group of diverse young people collaborating on a project in a modern workspace"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFTpGW8q1CS6-sa2QHllCbEw02NhEK7exVXd-DhR33LpHAteMWLFTYkI4MWMCfwlfG4VuImD79wW1Fw0PyhJBLrbmCWe5PDcR9Arl3Ab2vLtIwEruY6sbBm2rxU1C-idph5Q0ZdREL3FiHWh_t8zhppg3jABIZlOyxzb7I9MlKE8RbarRJxZ71UICEBRGBwKiz_LskCZvCnbqInL_8RnxMmFPhNNX5fAEZ90AybBKwRTeCgsps-grEE168CzBj3Md9IGfFsu8Pk3L7');
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-white dark:bg-background-dark py-16">
+        <div class="max-w-[960px] mx-auto px-4 md:px-10 lg:px-0">
+          <div class="text-center mb-12">
+            <span
+              class="text-primary font-bold tracking-wider text-sm uppercase"
+              >Arah Gerak Kami</span
+            >
+            <h2 class="text-[#131516] dark:text-white text-3xl font-bold mt-2">
+              Visi &amp; Misi
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              class="bg-secondary/30 dark:bg-gray-800 p-8 rounded-2xl border border-secondary dark:border-gray-700 flex flex-col gap-6"
+            >
+              <div
+                class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >visibility</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-bold text-[#131516] dark:text-white mb-3"
+                >
+                  Visi Kami
+                </h3>
+                <p
+                  class="text-[#6e787c] dark:text-gray-300 text-lg leading-relaxed italic"
+                >
+                  "Mewujudkan generasi muda kawasan Ijen yang cendekia,
+                  berkarakter luhur, dan berdaya saing global dengan tetap
+                  menjunjung tinggi kearifan lokal."
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-background-light dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 flex flex-col gap-6"
+            >
+              <div
+                class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl">target</span>
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-bold text-[#131516] dark:text-white mb-3"
+                >
+                  Misi Kami
+                </h3>
+                <ul class="flex flex-col gap-3">
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="material-symbols-outlined text-primary mt-1 text-lg"
+                      >check_circle</span
+                    >
+                    <span class="text-[#6e787c] dark:text-gray-300"
+                      >Menyelenggarakan pendidikan non-formal yang inklusif dan
+                      berkualitas.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="material-symbols-outlined text-primary mt-1 text-lg"
+                      >check_circle</span
+                    >
+                    <span class="text-[#6e787c] dark:text-gray-300"
+                      >Mengembangkan potensi kepemimpinan pemuda melalui
+                      pelatihan intensif.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="material-symbols-outlined text-primary mt-1 text-lg"
+                      >check_circle</span
+                    >
+                    <span class="text-[#6e787c] dark:text-gray-300"
+                      >Membangun ekosistem kolaborasi antara masyarakat,
+                      pemerintah, dan swasta.</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="material-symbols-outlined text-primary mt-1 text-lg"
+                      >check_circle</span
+                    >
+                    <span class="text-[#6e787c] dark:text-gray-300"
+                      >Melestarikan budaya dan lingkungan kawasan Ijen.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-primary py-20 text-white relative overflow-hidden">
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"
+        ></div>
+        <div class="max-w-[960px] mx-auto px-4 md:px-10 lg:px-0 relative z-10">
+          <div class="flex flex-col gap-3 mb-12">
+            <h2 class="text-3xl font-bold">Nilai-Nilai Organisasi</h2>
+            <p class="text-gray-300 max-w-xl">
+              Pondasi etika dan moral yang menjadi landasan setiap langkah kami
+              dalam berkarya.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/15 transition-all duration-300"
+            >
+              <div class="mb-4 text-secondary">
+                <span class="material-symbols-outlined text-4xl"
+                  >handshake</span
+                >
+              </div>
+              <h4 class="text-lg font-bold mb-2">Integritas</h4>
+              <p class="text-sm text-gray-300 leading-normal">
+                Menjunjung tinggi kejujuran dan etika dalam setiap tindakan
+                organisasi.
+              </p>
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/15 transition-all duration-300"
+            >
+              <div class="mb-4 text-secondary">
+                <span class="material-symbols-outlined text-4xl"
+                  >lightbulb</span
+                >
+              </div>
+              <h4 class="text-lg font-bold mb-2">Inovasi</h4>
+              <p class="text-sm text-gray-300 leading-normal">
+                Selalu mencari cara baru yang kreatif untuk memecahkan masalah
+                sosial.
+              </p>
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/15 transition-all duration-300"
+            >
+              <div class="mb-4 text-secondary">
+                <span class="material-symbols-outlined text-4xl">groups</span>
+              </div>
+              <h4 class="text-lg font-bold mb-2">Kolaborasi</h4>
+              <p class="text-sm text-gray-300 leading-normal">
+                Mengutamakan kerja sama tim dan kemitraan strategis.
+              </p>
+            </div>
+            <div
+              class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/15 transition-all duration-300"
+            >
+              <div class="mb-4 text-secondary">
+                <span class="material-symbols-outlined text-4xl"
+                  >volunteer_activism</span
+                >
+              </div>
+              <h4 class="text-lg font-bold mb-2">Kepedulian</h4>
+              <p class="text-sm text-gray-300 leading-normal">
+                Bergerak dengan hati untuk memberikan dampak positif bagi
+                sesama.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-background-light dark:bg-[#1e2326] py-16">
+        <div class="max-w-[960px] mx-auto px-4 md:px-10 lg:px-0">
+          <div
+            class="bg-white dark:bg-background-dark rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >verified_user</span
+                >
+                <h2 class="text-2xl font-bold text-[#131516] dark:text-white">
+                  Legalitas Organisasi
+                </h2>
+              </div>
+              <p class="text-[#6e787c] dark:text-gray-300 mb-6">
+                Ijen Cendikia Nusantara adalah lembaga yang sah dan terdaftar
+                secara hukum di Indonesia. Kami beroperasi dengan transparansi
+                dan akuntabilitas penuh.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <div
+                  class="flex items-center gap-3 bg-secondary/20 px-4 py-3 rounded-lg border border-secondary/50"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >gavel</span
+                  >
+                  <div>
+                    <p
+                      class="text-xs text-gray-500 dark:text-gray-400 uppercase font-bold"
+                    >
+                      SK Kemenkumham
+                    </p>
+                    <p class="text-[#131516] dark:text-white font-medium">
+                      AHU-0012345.AH.01.07
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 bg-secondary/20 px-4 py-3 rounded-lg border border-secondary/50"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >article</span
+                  >
+                  <div>
+                    <p
+                      class="text-xs text-gray-500 dark:text-gray-400 uppercase font-bold"
+                    >
+                      NPWP
+                    </p>
+                    <p class="text-[#131516] dark:text-white font-medium">
+                      98.765.432.1-123.000
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 flex justify-center">
+              <div
+                class="w-full aspect-square max-w-[200px] bg-contain bg-center bg-no-repeat opacity-80"
+                data-alt="Illustration representing legal document verification and security"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADeW0fs78KTTy-rV6tK2GGmvAtAZc0o_wSKx9lUv5WG-nlYXykdQ-9G6z8_cnu7wVkL0X17X2lCoMHGCyfbuY5SJqI3sPxvyuG8jfmuKWRwEkpt8V0nszeHpE0s4g_49ecBp28wjExovV7oHLcGz6Gy5PbxM-Lq2v261Kz_cxG5xVeGAcsBGHN0pgvsIZvYNdCybZ2r2E8as-qUA01Se6vP-aBPRUkaCWZqUNYtM4XNWTAmBctQ_0de6mQmcCBgirLIiZI8Xvu0xaE');
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="mt-auto bg-primary text-white">
+      <div
+        class="mx-auto flex max-w-[1080px] flex-col gap-10 px-6 py-12 lg:px-8"
+      >
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+          <div class="col-span-1 md:col-span-1">
+            <div class="mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-[24px]">school</span>
+              <h2 class="font-display text-xl font-bold">ICN</h2>
+            </div>
+            <p class="text-sm leading-relaxed text-secondary/80">
+              Membangun peradaban nusantara melalui pendidikan, penelitian, dan
+              pemberdayaan masyarakat.
+            </p>
+          </div>
+          <div>
+            <h3
+              class="mb-4 text-sm font-bold uppercase tracking-wider text-secondary"
+            >
+              Organisasi
+            </h3>
+            <ul class="flex flex-col gap-3 text-sm text-gray-300">
+              <li>
+                <a class="hover:text-white hover:underline" href="#"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white hover:underline" href="#"
+                  >Tim Kami</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white hover:underline" href="#">Karir</a>
+              </li>
+              <li>
+                <a class="hover:text-white hover:underline" href="#"
+                  >Hubungi Kami</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="mb-4 text-sm font-bold uppercase tracking-wider text-secondary"
+            >
+              Program
+            </h3>
+            <ul class="flex flex-col gap-3 text-sm text-gray-300">
+              <li>
+                <a class="hover:text-white hover:underline" href="#"
+                  >Penelitian</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white hover:underline" href="#"
+                  >Pemberdayaan</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white hover:underline" href="#"
+                  >Beasiswa</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white hover:underline" href="#"
+                  >Publikasi</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="mb-4 text-sm font-bold uppercase tracking-wider text-secondary"
+            >
+              Kontak
+            </h3>
+            <ul class="flex flex-col gap-3 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <span
+                  class="material-symbols-outlined text-[18px] text-secondary"
+                  >location_on</span
+                >
+                <span>Jl. Merdeka No. 45, Jakarta Pusat, Indonesia</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-[18px] text-secondary"
+                  >mail</span
+                >
+                <span>contact@icn.org</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-[18px] text-secondary"
+                  >call</span
+                >
+                <span>+62 21 1234 5678</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-between border-t border-white/10 pt-8 sm:flex-row"
+        >
+          <p class="text-xs text-gray-400">
+            © 2025 Ijen Cendikia Nusantara. All rights reserved.
+          </p>
+          <div class="mt-4 flex gap-4 sm:mt-0">
+            <a class="text-gray-400 hover:text-white" href="#"
+              ><span class="material-symbols-outlined text-[20px]"
+                >public</span
+              ></a
+            >
+            <a class="text-gray-400 hover:text-white" href="#"
+              ><span class="material-symbols-outlined text-[20px]"
+                >group</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll("[data-dropdown-btn]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.nextElementSibling.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
